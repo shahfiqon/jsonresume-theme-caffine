@@ -16,7 +16,8 @@
   "license": "MIT",
   "scripts": {
     "start": "npx gulp && npx resume serve --theme .",
-    "export": "npx gulp && npx resume export resume --format pdf --theme ."
+    "export": "npx gulp && node export-pdf.js",
+    "export-old": "npx gulp && npx resume export resume --format pdf --theme ."
   },
   "devDependencies": {
     "browser-sync": "^2.18.5",
@@ -37,7 +38,7 @@
     "gulp-load-plugins": "^2.0.1",
     "gulp-plumber": "^1.1.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-serve": "^1.4.0",
     "gulp-size": "^3.0.0",
     "gulp-uglify": "^3.0.2",
@@ -46,7 +47,9 @@
     "jshint-stylish": "^2.2.1",
     "lazypipe": "^1.0.1",
     "opn": "^6.0.0",
+    "puppeteer": "^24.30.0",
     "require-dir": "^1.2.0",
+    "sass": "^1.69.5",
     "serve-index": "^1.8.0",
     "yargs": "^15.0.2"
   },
