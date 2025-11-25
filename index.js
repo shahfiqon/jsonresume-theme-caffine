@@ -40,6 +40,21 @@ handlebars.registerHelper({
 
   formatDate: function (date) {
     return moment(date).format('MM/YYYY');
+  },
+
+  boldKeywords: function (text, keywords) {
+    if (!keywords || !Array.isArray(keywords) || keywords.length === 0) {
+      return text;
+    }
+    
+    let result = text;
+    keywords.forEach(keyword => {
+      // Create a regex that matches the keyword as a whole word (case-insensitive)
+      const regex = new RegExp(`\\b(${keyword})\\b`, 'gi');
+      result = result.replace(regex, '<strong>$1</strong>');
+    });
+    
+    return result;
   }
 });
 

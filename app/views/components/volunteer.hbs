@@ -4,10 +4,13 @@
 
   {{#each resume.volunteer}}
   <section class="item">
-    {{> section-header name=this.organization }}
-    {{#if position}}
-      <h5>{{position}}</h5>
-    {{/if}}
+    <div class="work-header">
+      <span class="work-position">{{position}}</span>
+      <span class="work-company">{{organization}}</span>
+      <span class="work-date">
+        {{#if startDate}}{{formatDate startDate}}{{/if}}{{#if endDate}} - {{formatDate endDate}}{{else}} - Present{{/if}}
+      </span>
+    </div>
 
     {{#if summary}}
       <p class="summary">{{summary}}</p>

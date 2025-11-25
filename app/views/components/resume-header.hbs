@@ -1,12 +1,38 @@
 {{#resume.basics}}
-<header class="resume-header clearfix">
-  <div class="profile-header pull-left">
-    <h1>{{name}}</h1>
-    <h2>{{label}}</h2>
-  </div>
-  <div class="profile-pic pull-right">
-    {{#if picture}}
-      <img src="{{picture}}" alt="profile-pic">
+<header class="resume-header">
+  <h1>{{name}}</h1>
+  <div class="contact-info">
+    {{#if profiles}}
+      {{#each profiles}}
+        {{#is (lowercase network) "linkedin"}}
+          <span class="contact-item">
+            <i class="fa fa-linkedin-square"></i>
+            <a href="{{url}}" target="_blank">LinkedIn</a>
+          </span>
+          <span class="separator">|</span>
+        {{/is}}
+      {{/each}}
+    {{/if}}
+    {{#if phone}}
+      <span class="contact-item">{{phone}}</span>
+      <span class="separator">|</span>
+    {{/if}}
+    {{#if email}}
+      <span class="contact-item">
+        <i class="fa fa-envelope-o"></i>
+        <a href="mailto:{{email}}">{{email}}</a>
+      </span>
+    {{/if}}
+    {{#if profiles}}
+      {{#each profiles}}
+        {{#is (lowercase network) "github"}}
+          <span class="separator">|</span>
+          <span class="contact-item">
+            <i class="fa fa-github"></i>
+            <a href="{{url}}" target="_blank">GitHub</a>
+          </span>
+        {{/is}}
+      {{/each}}
     {{/if}}
   </div>
 </header>

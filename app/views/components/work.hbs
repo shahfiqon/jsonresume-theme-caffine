@@ -4,11 +4,13 @@
 
   {{#each resume.work}}
   <section class="item">
-    {{> section-header name=this.company }}
-
-    {{#if position}}
-      <h4>{{position}}</h4>
-    {{/if}}
+    <div class="work-header">
+      <span class="work-position">{{position}}</span>
+      <span class="work-company">{{company}}</span>
+      <span class="work-date">
+        {{#if startDate}}{{formatDate startDate}}{{/if}}{{#if endDate}} - {{formatDate endDate}}{{else}} - Present{{/if}}
+      </span>
+    </div>
 
     {{#if summary}}
       <p class="summary">{{summary}}</p>
@@ -17,7 +19,7 @@
     {{#if highlights.length}}
       <ul>
         {{#each highlights}}
-        <li>{{.}}</li>
+        <li>{{{boldKeywords . ../highlights_bold}}}</li>
         {{/each}}
       </ul>
     {{/if}}
