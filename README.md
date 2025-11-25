@@ -26,8 +26,36 @@ This project uses [gulp](http://gulpjs.com/) and [resume-cli](https://github.com
 ## Quick Commands
 - `npm start` - Run the build and generate a resume html page for development
 - `npm run export` - Exports the resume into a `resume.pdf` file
+- `node cli.js -i <input> -o <output>` - Generate PDF from any resume.json file
+- `node test-generation.js` - Run tests to verify dynamic generation
 
 To run any default resume-cli commands, simply run all resume-cli commands against `npx resume`.
+
+### Dynamic Resume Generation (NEW)
+
+This theme now supports dynamic resume generation from any location:
+
+```bash
+# Generate PDF from custom location
+node cli.js -i /tmp/my-resume.json -o /tmp/output.pdf
+
+# Or use export-pdf.js directly
+node export-pdf.js /path/to/resume.json /path/to/output.pdf
+```
+
+For programmatic usage (e.g., from an application like AI Job Bot):
+
+```javascript
+const { generateResumePDF } = require('./generate-resume');
+
+await generateResumePDF({
+  resume: resumeObject,  // Can be object or file path
+  outputPath: '/tmp/output.pdf',
+  tmpDir: '/tmp'
+});
+```
+
+See `INTEGRATION.md` for complete integration guide and `example-python-integration.py` for Python usage.
 
 ## Features
 This theme environment comes equipped with the following features to make your development environment easier:

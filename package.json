@@ -17,7 +17,11 @@
   "scripts": {
     "start": "npx gulp && npx resume serve --theme .",
     "export": "npx gulp && node export-pdf.js",
-    "export-old": "npx gulp && npx resume export resume --format pdf --theme ."
+    "export-old": "npx gulp && npx resume export resume --format pdf --theme .",
+    "generate": "npx gulp && node cli.js"
+  },
+  "bin": {
+    "generate-resume": "./cli.js"
   },
   "devDependencies": {
     "browser-sync": "^2.18.5",
