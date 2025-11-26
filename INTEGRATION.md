@@ -402,3 +402,4 @@ For issues or questions:
 - Theme: https://github.com/kelyvin/jsonresume-theme-caffeine
 - JSON Resume Schema: https://jsonresume.org/schema/
 
+

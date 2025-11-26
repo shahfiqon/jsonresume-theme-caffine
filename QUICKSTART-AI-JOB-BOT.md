@@ -360,3 +360,4 @@ The theme is production-ready and fully tested. Start integrating and generating
 
 Questions? Check the full `INTEGRATION.md` guide or review the working examples.
 
+
