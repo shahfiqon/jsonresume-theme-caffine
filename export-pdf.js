@@ -73,21 +73,23 @@ async function exportPDF(resumePath = './resume.json', outputPath = './resume.pd
       printBackground: true,
       displayHeaderFooter: true,
       headerTemplate: `
-        <div style="font-size: 10px; text-align: center; width: 100%; padding: 10px 0; border-bottom: 1px solid #e0e0e0; color: #666;">
-          <h1 style="margin: 0 0 8px 0; font-size: 18px; font-weight: 500; color: #333;">${basics.name || ''}</h1>
+        <div style="font-size: 10px; text-align: center; width: 100%; padding: 20px 30px; border-bottom: 1px solid #e0e0e0; color: #666;">
+          <h1 style="margin: 0 0 10px 0; font-size: 18px; font-weight: 500; color: #333;">${basics.name || ''}</h1>
           <div style="font-size: 10px; color: #666;">
             ${contactInfo}
           </div>
         </div>
       `,
       footerTemplate: `
-        <div style="font-size: 10px; text-align: center; width: 100%; padding: 10px 0; border-top: 1px solid #e0e0e0; color: #666;">
+        <div style="font-size: 10px; text-align: center; width: 100%; padding: 15px 30px; border-top: 1px solid #e0e0e0; color: #666;">
           <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
         </div>
       `,
       margin: {
-        top: '80px',    // Space for header
-        bottom: '30px', // Space for footer
+        top: '120px',   // Space for header with extra padding
+        bottom: '50px', // Space for footer with extra padding
+        left: '0px',
+        right: '0px'
       }
     });
     

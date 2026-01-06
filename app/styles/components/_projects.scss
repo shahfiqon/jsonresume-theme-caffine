@@ -1,0 +1,40 @@
+.projects-container {
+  .projects-list {
+    margin-top: spacing(2);
+    
+    li {
+      line-height: 1.6;
+      margin-bottom: spacing(1);
+      
+      a {
+        color: $link-color;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .projects-container {
+    .projects-list {
+      li {
+        a {
+          color: $gray-darkest;
+          text-decoration: underline;
+          
+          &:after {
+            content: " (" attr(href) ")";
+            font-size: 0.9em;
+            color: $gray-dark;
+          }
+        }
+      }
+    }
+  }
+}
+

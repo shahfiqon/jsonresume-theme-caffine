@@ -14,13 +14,50 @@
     .resume-content {
       padding: 0 22px 0 34px;
     }
+
+    .resume-header {
+      margin-bottom: 24px;
+    }
   }
 
   .container {
+    page-break-inside: auto;
+  }
+
+  // Keep smaller sections together
+  .summary-container,
+  .skills-container,
+  .languages-container,
+  .interests-container {
     page-break-inside: avoid;
   }
 
-  .work-container {
+  .work-container,
+  .volunteer-container {
+    .item {
+      page-break-inside: auto;
+      
+      .work-header {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+      }
+      
+      .summary {
+        page-break-after: avoid;
+      }
+      
+      ul {
+        li {
+          page-break-inside: avoid;
+        }
+      }
+    }
+  }
+
+  .education-container,
+  .awards-container,
+  .publications-container,
+  .references-container {
     .item {
       page-break-inside: avoid;
     }

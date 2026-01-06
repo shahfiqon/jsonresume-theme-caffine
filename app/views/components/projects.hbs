@@ -1,0 +1,20 @@
+{{#if resume.projects.length}}
+<div class="container projects-container">
+  {{> title value="Relevant Projects & Blogs"}}
+  
+  <section class="item">
+    <ul class="projects-list">
+      {{#each resume.projects}}
+        <li>
+          {{#if url}}
+            <a href="{{url}}" target="_blank" rel="noopener noreferrer">{{name}}</a>
+          {{else}}
+            {{name}}
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+</div>
+{{/if}}
+
