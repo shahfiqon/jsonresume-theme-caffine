@@ -5,25 +5,28 @@
   {{#each resume.work}}
   <section class="item">
     <div class="work-header">
-      <span class="work-position">{{position}}</span>
-      <span class="work-company">{{company}}</span>
-      <span class="work-date">
-        {{#if startDate}}{{formatDate startDate}}{{/if}}{{#if endDate}} - {{formatDate endDate}}{{else}} - Present{{/if}}
-      </span>
+      <div class="work-position">{{position}}</div>
+      <div class="work-company-date">
+        <div class="work-company">{{company}}{{#if location}} | {{location}}{{/if}}</div>
+        <div class="work-date">{{#if startDate}}{{formatDate startDate}}{{/if}}{{#if endDate}} - {{formatDate endDate}}{{else}} - Present.{{/if}}</div>
+      </div>
     </div>
 
+    <div>
     {{#if summary}}
       <p class="summary">{{summary}}</p>
     {{/if}}
+    </div>
 
     {{#if highlights.length}}
-      <ul>
+      <div class="highlights">
         {{#each highlights}}
-        <li>{{{boldKeywords . ../highlights_bold}}}</li>
+        <div class="highlight-item">• {{{boldKeywords . ../highlights_bold}}}</div>
         {{/each}}
-      </ul>
+      </div>
     {{/if}}
   </section>
+  {{#unless @last}}<div class="section-separator"></div>{{/unless}}
   {{/each}}
 </div>
 {{/if}}

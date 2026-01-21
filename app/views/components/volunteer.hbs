@@ -5,11 +5,13 @@
   {{#each resume.volunteer}}
   <section class="item">
     <div class="work-header">
-      <span class="work-position">{{position}}</span>
-      <span class="work-company">{{organization}}</span>
-      <span class="work-date">
+      <div class="work-position">{{toUpperCase position}}</div>
+      <div class="work-company">
+        {{organization}}{{#if location}} | {{location}}{{/if}}
+      </div>
+      <div class="work-date">
         {{#if startDate}}{{formatDate startDate}}{{/if}}{{#if endDate}} - {{formatDate endDate}}{{else}} - Present{{/if}}
-      </span>
+      </div>
     </div>
 
     {{#if summary}}
@@ -17,13 +19,14 @@
     {{/if}}
 
     {{#if highlights.length}}
-      <ul>
+      <div class="highlights">
         {{#each highlights}}
-        <li>{{.}}</li>
+        <div class="highlight-item">• {{.}}</div>
         {{/each}}
-      </ul>
+      </div>
     {{/if}}
   </section>
+  {{#unless @last}}<div class="section-separator"><br /><br /></div>{{/unless}}
   {{/each}}
 </div>
 {{/if}}

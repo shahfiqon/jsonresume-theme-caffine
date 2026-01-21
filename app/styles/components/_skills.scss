@@ -1,21 +1,26 @@
 .skills-container {
-  ul {
-    margin: spacing(0) 0 0;
-    -webkit-padding-start: spacing(5);
+  .skills-list {
+    margin-top: spacing(1);
   }
   
   .skill-category {
-    margin-left: spacing(-2);
+    margin-bottom: spacing(0.5);
+    line-height: 1.2;
     
     &:last-child {
       margin-bottom: 0;
     }
   }
   
+  .category-label {
+    font-weight: 700;
+    font-size: 13px;
+    margin-right: spacing(1);
+  }
+  
   .skill-keywords {
-    margin: 0;
-    line-height: 1.8;
     font-size: 12px;
+    line-height: 1.2;
     color: $gray-darkest;
   }
 }

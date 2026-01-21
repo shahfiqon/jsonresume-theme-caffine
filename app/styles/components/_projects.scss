@@ -1,19 +1,79 @@
 .projects-container {
-  .projects-list {
-    margin-top: spacing(2);
+  .section-separator {
+    height: auto;
+    line-height: 1.2;
+    font-size: 13px;
+    visibility: visible;
+    margin: spacing(1) 0;
+  }
+  
+  .item {
+    margin-bottom: spacing(2);
     
-    li {
-      line-height: 1.6;
-      margin-bottom: spacing(1);
-      
-      a {
-        color: $link-color;
-        text-decoration: none;
-        
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .project-header {
+    margin-bottom: spacing(0.5);
+    padding: 0;
+    line-height: 1;
+  }
+  
+  .project-name {
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+  }
+
+  .project-date {
+    font-style: italic;
+    font-size: 13px;
+    color: $gray-dark;
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+  }
+
+  .project-url {
+    font-size: 12px;
+    color: $link-color;
+    margin-bottom: spacing(0.5);
+    word-break: break-all;
+  }
+
+  .project-technologies {
+    font-size: 13px;
+    margin-top: spacing(0.5);
+    margin-bottom: spacing(1);
+
+    strong {
+      font-weight: 700;
+      margin-right: spacing(0.5);
+    }
+  }
+
+  .summary {
+    margin-top: spacing(1);
+    margin-bottom: spacing(1);
+  }
+  
+  .highlights {
+    margin-top: spacing(1);
+  }
+  
+  .highlight-item {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: spacing(0.5);
+    padding-left: spacing(2);
+    text-indent: spacing(-2);
+    
+    strong {
+      font-weight: 700;
     }
   }
 }
@@ -21,19 +81,8 @@
 // Print styles
 @media print {
   .projects-container {
-    .projects-list {
-      li {
-        a {
-          color: $gray-darkest;
-          text-decoration: underline;
-          
-          &:after {
-            content: " (" attr(href) ")";
-            font-size: 0.9em;
-            color: $gray-dark;
-          }
-        }
-      }
+    .project-url {
+      color: $gray-darkest;
     }
   }
 }

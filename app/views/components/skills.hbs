@@ -2,16 +2,19 @@
 <div class="container skills-container">
   {{> title value="Skills"}}
   
-  <ul>
+  <div class="skills-list">
     {{#each resume.skills}}
-    <li class="skill-category">
-      {{#if keywords.length}}
-        <span class="skill-keywords">
-          {{#each keywords}}{{#unless @first}} | {{/unless}}{{.}}{{/each}}
-        </span>
+    <div class="skill-category">
+      {{#if name}}
+      <span class="category-label">{{name}}:</span>
       {{/if}}
-    </li>
+      {{#if keywords.length}}
+      <span class="skill-keywords">
+        {{#each keywords}}{{#unless @first}}, {{/unless}}{{.}}{{/each}}
+      </span>
+      {{/if}}
+    </div>
     {{/each}}
-  </ul>
+  </div>
 </div>
 {{/if}}

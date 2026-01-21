@@ -1,4 +1,16 @@
 @media print {
+  // Set page margins - first page has less top margin
+  @page :first {
+    margin-top: 0;
+  }
+  
+  @page {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   body {
     margin: 0;
   }
@@ -17,6 +29,29 @@
 
     .resume-header {
       margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      
+      .header-left {
+        .header-name {
+          font-size: 28px;
+        }
+        
+        .header-label {
+          font-size: 16px;
+        }
+      }
+      
+      .header-right {
+        .contact-info {
+          font-size: 12px;
+          
+          .contact-item {
+            white-space: nowrap;
+          }
+        }
+      }
     }
   }
 

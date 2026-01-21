@@ -1,20 +1,43 @@
 {{#if resume.projects.length}}
 <div class="container projects-container">
-  {{> title value="Relevant Projects & Blogs"}}
-  
+  {{> title value="PROJECTS"}}
+
+  {{#each resume.projects}}
   <section class="item">
-    <ul class="projects-list">
-      {{#each resume.projects}}
-        <li>
-          {{#if url}}
-            <a href="{{url}}" target="_blank" rel="noopener noreferrer">{{name}}</a>
-          {{else}}
-            {{name}}
-          {{/if}}
-        </li>
+    <div class="project-header">
+      <div class="project-name">{{name}}</div>
+
+      {{#if startDate}}
+      <div class="project-date">
+        {{formatDate startDate}}{{#if endDate}} - {{formatDate endDate}}{{/if}}
+      </div>
+      {{/if}}
+    </div>
+
+    {{#if url}}
+    <div class="project-url">{{url}}</div>
+    {{/if}}
+
+    {{#if summary}}
+    <p class="summary">{{summary}}</p>
+    {{/if}}
+
+    {{#if keywords.length}}
+    <div class="project-technologies">
+      <strong>Technologies:</strong> {{#each keywords}}{{#unless @first}}, {{/unless}}{{.}}{{/each}}
+    </div>
+    {{/if}}
+
+    {{#if highlights.length}}
+    <div class="highlights">
+      {{#each highlights}}
+      <div class="highlight-item">• {{{boldKeywords . ../highlights_bold}}}</div>
       {{/each}}
-    </ul>
+    </div>
+    {{/if}}
   </section>
+  {{#unless @last}}<div class="section-separator"></div>{{/unless}}
+  {{/each}}
 </div>
 {{/if}}
 

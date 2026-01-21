@@ -42,6 +42,10 @@ handlebars.registerHelper({
     return moment(date).format('MM/YYYY');
   },
 
+  toUpperCase: function (text) {
+    return text ? text.toUpperCase() : '';
+  },
+
   boldKeywords: function (text, keywords) {
     if (!keywords || !Array.isArray(keywords) || keywords.length === 0) {
       return text;
